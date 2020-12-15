@@ -8,6 +8,8 @@ ENV REACT_APP_API_PATH=graphql
 
 WORKDIR /usr/src/app
 
+RUN npm install -g serve
+
 COPY package-lock.json ./
 COPY package.json ./
 
@@ -17,4 +19,4 @@ COPY . .
 
 RUN npm run build
 
-CMD npm run start
+CMD serve -s build
